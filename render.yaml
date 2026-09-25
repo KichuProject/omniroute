@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: omniroute
+    runtime: node
+    plan: free
+    region: oregon
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: OMNIROUTE_SERVER_HOST
+        value: 0.0.0.0
+      - key: REQUIRE_API_KEY
+        value: "true"
+      - key: INITIAL_PASSWORD
+        generateValue: true
+      - key: JWT_SECRET
+        generateValue: true
+      - key: API_KEY_SECRET
+        generateValue: true
+    # If on a paid plan and using Render Persistent Disks:
+    # disk:
+    #   name: omniroute-data
+    #   mountPath: /var/lib/omniroute
+    #   sizeGB: 1

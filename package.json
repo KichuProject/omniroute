@@ -1,0 +1,16 @@
+{
+  "name": "omniroute-render",
+  "version": "1.0.0",
+  "description": "Production-ready OmniRoute deployment wrapper for Render",
+  "scripts": {
+    "start": "omniroute --no-open",
+    "start:npx": "npx -y omniroute --no-open",
+    "start:wrapper": "node start.js"
+  },
+  "dependencies": {
+    "omniroute": "latest"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
