@@ -20,6 +20,12 @@ services:
         generateValue: true
       - key: API_KEY_SECRET
         generateValue: true
+      - key: OMNIROUTE_MEMORY_MB
+        value: "320"
+      - key: NODE_OPTIONS
+        value: "--max-old-space-size=320"
+      - key: NEXT_TELEMETRY_DISABLED
+        value: "1"
     # If on a paid plan and using Render Persistent Disks:
     # disk:
     #   name: omniroute-data
